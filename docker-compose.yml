@@ -1,12 +1,14 @@
 version: '3.8'
 services:
   lr_api:
+    container_name: 'lr_api'
     build: API/
     volumes:
       - ./API/src:/var/www/html
     ports:
       - 80:80
   lr_ui:
+    container_name: 'lr_ui'
     build: UI/
     volumes:
       - ./UI/src:/home/node/src
