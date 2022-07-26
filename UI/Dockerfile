@@ -8,4 +8,4 @@ COPY package.json .
 RUN npm i
 COPY src .
 
-CMD npm start
+CMD ["npm", "start"]

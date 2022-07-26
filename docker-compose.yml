@@ -11,5 +11,8 @@ services:
     volumes:
       - ./UI/src:/home/node/src
       - ./UI/build:/home/node/build
+      - ./UI/public:/home/node/public
+    ports:
+      - 3001:3001
     depends_on:
       - lr_api
