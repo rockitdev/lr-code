@@ -1,30 +1,31 @@
-# LifeRaft Code Test
+# Code Test
 
-A jumpstart for the LifeRaft code test
-
-## Getting started
-
-This repository is intended to act as a starting point for your code test. Fork this repo, then flesh it out with your own code.
+To begin, checkout a local copy of the code base
 ```
-git clone https://gitlab.com/steve.day/liferaft-php-code-test.git
-git remote add upstream https://somegithost.com/yourrepopath
+git clone https://github.com/rockitdev/lr-code.git
 ```
-(Replace `https://somegithost.com/yourrepopath` with the URL to an empty repo you create)
 
-You can make any changes to what is provided that you see fit. This entire repo is intended as a convenience. You are not *required* to use it.
+Start the docker images
+```
+docker-compose up -d
+```
 
-## Add your files
-The `./API` folder is where you will write the **server** portion of the code test. `./UI` will store the **React** portion.
+Install the composer dependencies on first run for Laravel app
+```
+docker exec lr_api composer install
+```
 
-## Run with Docker
-To run your project, simply run `docker-compose up` in your terminal. Press `Ctrl+C` to stop it.
+React app runs a development server on port 3001
+```
+http://127.0.0.1:3001
+```
 
-The `Dockerfile`s are already configured to handle all the Apache server work. You just need to provide the PHP code.
+Laravel API Resource
+```
+http://127.0.0.1/api/persons
+```
 
-The API docker container is configured to listen on port `80`. The UI container uses `3001`.
-
-## Replace this file
-It's a good idea to replace this file with your own `README.md` describing anything we might need to know about running your app.
-
-## Support
-There's nothing wrong with asking for help. If you need any clarification on how to use this repo or the test details themselves, please reach out to us for assistance.
+On successful submission, customers.txt can be found in:
+```
+./API/src/storage/app
+```
